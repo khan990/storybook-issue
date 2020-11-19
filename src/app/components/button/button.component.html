@@ -1,0 +1,13 @@
+<ion-button
+    [fill]="buttonStyle"
+    [expand]="expand"
+    [disabled]="disabled"
+    (click)="onClick($event)"
+>
+    <ng-container *ngIf="isLoading === false; else loadingSpinner">
+        {{ buttonText }}
+    </ng-container>
+    <ng-template #loadingSpinner>
+        <ion-spinner name="crescent"></ion-spinner>
+    </ng-template>
+</ion-button>
